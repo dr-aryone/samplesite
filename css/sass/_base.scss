@@ -1,0 +1,36 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "normalize";
+@import "h5bp";
+@import "susy";
+@import "font-awesome";
+@import "animate";
+
+// ---------------------------------------------------------------------------
+// Basic Grid
+
+$total-columns  : 4;
+$column-width   : 4em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width;
+
+$show-grid-backgrounds  : false;
+
+$mobile-columns : 4;
+$mobile-width 	: 25em;
+$mobile 		: $mobile-width;
+
+$tablet-columns : 10;
+$tablet-width 	: 40em;
+$tablet 		: $tablet-width $tablet-columns;
+
+$desktop-columns: 12;
+$desktop-width 	: 60em;
+$desktop 		: $desktop-width $desktop-columns;
+
+$container-style: fluid;
+
+$legacy-support-for-ie  : true;
+$legacy-support-for-ie6 : $legacy-support-for-ie;
+$legacy-support-for-ie7 : $legacy-support-for-ie;

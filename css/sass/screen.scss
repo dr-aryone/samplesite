@@ -1,0 +1,849 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "base";
+
+/* -------------------------------------------------------------------------*/
+/* Layout */
+
+@include border-box-sizing;
+
+.container,
+.container-odd {
+  @include container;
+  @include susy-grid-background;
+}
+
+/*========================================
+=            Site-Wide Styles            =
+========================================*/
+
+body {
+	color: #333;
+	font-family: 'Gudea', Verdana, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.cta-btn-main {
+	//font-family: 'Montserrat Alternates', sans-serif;
+	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+}
+
+/*===============================
+=            Top Bar            =
+===============================*/
+
+.top-bar {
+	background-color: #333;
+	padding: 0.5em 0;
+}
+
+.top-bar .social-icons a {
+	color: #bbb;
+	padding-left: 0.75em;
+}
+
+.top-bar .social-icons a:hover {
+	color: #F5EEE1;
+}
+
+.top-bar a:hover .icon-facebook {
+	color: #6D8BC9;
+}
+
+.top-bar a:hover .icon-linkedin-sign {
+	color: #2768A8;
+}
+
+.top-bar a:hover .icon-twitter {
+	color: #74C2F2;
+}
+
+.top-bar a:hover .icon-google-plus {
+	color: #B70D15;
+}
+
+.top-bar a:hover .icon-tumblr {
+	color: #668195;
+}
+
+.top-bar .contact-info {
+	@include span-columns(4 omega, 4);
+
+	font-size: 0.8em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-top: 0.25em;
+}
+
+.top-bar .contact-info li {
+	color: #bbb;
+	text-decoration: none;
+	padding-right: 1.5em;
+	display: block;
+	float: left;
+}
+
+.top-bar .contact-info .icon-phone,
+.top-bar .contact-info .icon-envelope {
+	font-size: 1.5em;
+	padding-right: 0.5em;
+}
+
+.social-icons-div {
+	@include span-columns(4 omega, 4);
+}
+
+.social-icons {
+	font-size: 0.8em;
+	list-style: none;
+	padding: 0.5em 0 0;
+	margin: 0;
+}
+
+.social-icons li {
+	font-size: 1.5em;
+	float: left;
+}
+
+.top-bar .social-icons a {
+	text-decoration: none;
+	padding: 0;
+	padding-right: 0.5em;
+}
+
+/*===================================
+=            Site Header            =
+===================================*/
+
+.site-header {
+	background-color: #44C78D;
+	font-weight: normal;
+}
+
+.site-title {
+	margin: 0;
+	padding: 1em 0;
+}
+
+.site-title a {
+	font-size: 1.25em;
+	color: #fff;
+	text-decoration: none;
+}
+
+/*===============================================
+=            Pure CSS Drop-Down Menu            =
+===============================================*/
+
+/* This menu is augmented by a JS script for slide-down animations */
+/* See js/vendor/plugins.js */
+
+.menu {
+	@include span-columns(4 omega, 4);
+
+	list-style: none; 
+	padding-left: 0;
+	margin: 0;
+	position: relative;
+}
+
+.menu li {
+	position: relative;
+}
+
+.menu li a {
+	display: block;
+}
+
+.menu li ul {
+	list-style: none;
+	padding: 0;
+	position: absolute;
+	top: 100%;
+	width: 10em;
+	visibility: hidden;
+}
+
+.menu li ul a {
+	width: 100%;
+}
+			
+.menu li ul li {
+	float: none;
+}
+		
+.menu li:hover > ul {
+	margin-top: 0px;
+}
+
+.menu li:hover > ul ul {
+	position: absolute;
+	left: 100%;
+	top: 0;
+}
+
+li.last:hover > ul ul {
+	position: absolute;
+	left: -100%;
+}
+		
+.menu li.right:hover > ul ul {
+	position: absolute;
+	left: -100%;
+}
+
+.menu-main {
+	background-color: #17A768;
+	position: relative;
+	z-index: 25;
+}
+
+.menu-mobile {
+	border-bottom: 0;
+	display: block;
+}
+
+.menu-main .menu li {
+	border-bottom: 1px solid #148C57;
+	display: none;
+
+	&:last-child {
+		border-bottom: 0;
+	}
+}
+
+.menu-main .menu li a {
+	color: #fff;
+	text-decoration: none;
+	padding: 10px 20px;
+	display: block;
+}
+
+.menu-main .menu li ul {
+	background-color: #17A768;
+}
+
+.menu-main .menu li.menu-mobile {
+	display: block;
+}
+
+.menu-main .menu-mobile a {
+	color: #fff;
+	font-size: 2em;
+	text-align: right;
+	background-color: #148C57;
+	border-bottom: 0;
+}
+
+.menu-main:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.container.no-padding {
+	padding: 0;
+}
+
+/*=================================
+=            Features             =
+=================================*/
+.app-features {
+	padding: 2em 0;
+}
+
+.app-features .feature {
+	@include span-columns(4, 4);
+	color: #333;
+	text-align: center;
+
+	&.rowend {
+		@include span-columns(4 omega, 4);
+	}
+}
+
+.app-features .feature .icon-heart,
+.app-features .feature .icon-rocket,
+.app-features .feature .icon-music {
+	behavior: url(PIE.htc);
+	background-color: #F5EEE1;
+	font-size: 4em;
+	display: block;
+	width: 1.75em;
+	height: 1.75em;
+	padding: 0.75em 0.5em 0;
+	margin: 0 auto;	
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	border-radius: 50%;
+}
+
+/*==========================================
+=            Image Row/Carousel            =
+==========================================*/
+.carousel {
+	background-color: #F5EEE1;
+	padding: 2em 0;
+}
+
+.carousel .photo {	
+	@include span-columns(4 omega);
+
+	color: #333;
+	margin-bottom: 1em;
+
+	&.rowend {
+		margin-bottom: 0;
+	}
+}
+
+.carousel figure {
+	max-width: 100%;
+	position: relative;
+}
+
+.carousel figcaption {
+	background-color: #000;
+	background-color: rgba(0,0,0,0.7);
+	color: #fff;
+	width: 100%;
+	padding: 0.5em 1em;
+	position: absolute;
+	bottom: 0;
+}
+
+.carousel figcaption p {
+	margin: 0;
+}
+
+.photo-title {
+	margin-top: 0;
+}
+
+.carousel figure,
+.carousel img {
+	width: 100%;
+}
+
+/*=============================================
+=            Call-to-Action Banner            =
+=============================================*/
+.cta-banner {
+	color: #fff;
+	background-color: #17A768;
+	padding: 2em 0;
+}
+
+.cta-banner .cta-text {
+	@include span-columns(4 omega, 4);
+
+	font-size: 1.25em;
+	float: left;
+}
+
+.cta-banner .cta-subtitle {
+	font-size: 1em;
+	margin: 0;
+}
+
+.cta-banner .cta-btn-main {
+	@include span-columns(4 omega, 4);
+
+	color: #fff;
+	background-color: #F1AD1D;
+	font-size: 1.5em;
+	margin-top: 1em;
+	padding: 0.5em 1em;
+	border: 0;
+	float: right;
+	position: relative;
+	-webkit-transition: top 0.3s;
+	-moz-transition: top 0.3s;
+	transition: top 0.3s;
+}
+
+.cta-banner .cta-btn-main:hover {
+	background-color: #FFBC2E;
+}
+
+.cta-banner .cta-btn-main:active {
+	position: relative;
+	top: 2px;
+	-webkit-transition: top 0.3s;
+	-moz-transition: top 0.3s;
+	transition: top 0.3s;
+}
+
+.cta-banner .cta-title {
+	font-weight: normal;
+	margin: 0;
+}
+
+/*=======================================
+=            Contact Section            =
+========================================*/
+.google-map {
+	height: 15em;
+}
+
+.map-title {
+	background-color: #F5EEE1;
+	margin: 0;
+	padding: 2em;
+}
+
+.contact-form {
+	list-style: none;
+	padding-left: 0;
+}
+
+.site-contact {
+	padding: 2em 0;
+
+	li {
+		@include container;
+		width: 100%;
+		padding: 0;
+	}
+}
+
+.site-contact .contact-form {
+	@include span-columns(4 omega, 4);
+}
+
+.contact-form label {
+	@include span-columns(4 omega, 4);
+
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+
+.contact-form input,
+.contact-form textarea {
+	@include span-columns(4 omega, 4);
+
+	background-color: #F5EEE1;
+	margin-bottom: 1em;
+	padding: 0.5em 1em;
+	border: 0;
+}
+
+.contact-form textarea {
+	min-height: 150px;
+}
+
+/* Placeholder styling still requires vendor prefixes that cannot be combined */
+::-webkit-input-placeholder {
+   color: #BBAE93;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #BBAE93;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #BBAE93;  
+}
+
+:-ms-input-placeholder {  
+   color: #BBAE93;  
+}
+
+.site-contact .contact-reset,
+.site-contact .contact-submit {
+	color: #fff;
+	padding: 0.5em 1em;
+	margin-left: 1em;
+	width: 8em;
+	border: 0;
+	float: right;
+}
+
+.site-contact .contact-reset {
+	background-color: #BBAE93;
+}
+
+.site-contact .contact-reset:hover {
+	background-color: #D6C8A9;
+}
+
+.site-contact .contact-submit {
+	background-color: #F1AD1D;
+	font-weight: bold;
+}
+
+.site-contact .contact-submit,
+.site-contact .contact-reset {
+	position: relative;
+	-webkit-transition: top 0.3s;
+	-moz-transition: top 0.3s;
+	transition: top 0.3s;
+
+	&:active {
+		top: 2px;
+		-webkit-transition: top 0.3s;
+		-moz-transition: top 0.3s;
+		transition: top 0.3s;
+	}
+}
+
+.site-contact .contact-submit:hover {
+	background-color: #FFBC2E;
+}
+
+.contact-info {
+	padding-left: 0;
+	list-style: none;
+}
+
+.site-contact .contact-info .icon-map-marker,
+.site-contact .contact-info .icon-phone, 
+.site-contact .contact-info .icon-envelope {
+	color: #F1601D;
+	padding-right: 0;
+	width: 24px;
+	display: inline-block;
+}
+
+.site-contact .contact-info {
+	@include span-columns(4 omega, 4);
+}
+
+.contact-info .header h3 {
+	margin-top: 0;
+}
+
+/*===================================
+=            Page Footer            =
+===================================*/
+.site-footer {
+	color: #B6FADC;
+	background-color: #17A768;
+	padding: 2em 0 0;
+}
+
+.site-footer a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.site-footer .footer-title {
+	color: #fff;
+}
+
+.site-footer .footer {
+	@include span-columns(4 omega, 4);
+
+	padding-bottom: 2em;
+}
+
+.site-footer .footer address,
+.site-footer .tweets li {
+	background-color: #148C57;
+	padding: 0.5em;
+	display: block;
+}
+
+.site-footer .recent-posts,
+.site-footer .archive-months,
+.site-footer .tweets {
+	list-style: none;
+	padding-left: 0;
+}
+
+.site-footer .recent-posts li,
+.site-footer .archive-months li {
+	padding-bottom: 0.5em;
+	margin-top: 0.5em;
+	border-bottom: 1px solid #148C57;
+}
+
+.site-footer .recent-posts p {
+	margin: 0;
+}
+
+.site-footer .tweets li {
+	margin-bottom: 1em;
+}
+
+.site-footer .tweets p {
+	margin: 0;
+}
+
+.site-footer .copyright {
+	background-color: #148C57;
+	text-align: center;
+	margin-top: 2em;
+	padding: 1em;
+	clear: both;
+}
+
+.site-footer .copyright p {
+	font-style: italic;
+	margin: 0;
+}
+
+/*===================================
+=            Breakpoints            =
+===================================*/
+
+@include at-breakpoint($tablet) {
+	@include with-grid-settings($tablet-columns, $column-width, $gutter-width, $grid-padding) {
+		.container {
+			@include container;
+			@include susy-grid-background;
+		}
+	}
+
+	@include with-grid-settings(9, $column-width, $gutter-width, $grid-padding) {
+		.container-odd {
+			@include container;
+			@include susy-grid-background;
+		}
+	}
+
+	.top-bar .contact-info {
+		@include span-columns(7, 10);
+	}
+
+	.social-icons-div {
+		@include span-columns(3 omega, 10);
+	}
+
+	.social-icons {
+		padding-top: 0;
+		padding-left: 0;
+		padding-right: 0.5em;
+		float: right;
+	}
+
+	.top-bar .social-icons a {
+		padding: 0;
+		padding-left: 0.5em;
+	}
+
+	.app-features .feature,
+	.carousel .photo {
+		@include span-columns(3, 9);
+
+		&.rowend {
+			@include span-columns(3 omega, 9);
+		}
+	}
+
+	.cta-banner .cta-text {
+		@include span-columns(7, 10);
+	}
+
+	.cta-banner .cta-btn-main {
+		@include span-columns(3 omega, 10);
+		margin-top: 0;
+	}
+
+	.contact-form label {
+		@include span-columns(2, 12);
+	}
+
+	.contact-form input,
+	.contact-form textarea {
+		@include span-columns(8 omega, 12);
+	}
+
+	.site-footer .footer {
+		@include span-columns(5, 10); 
+		&.rowend-tablet {
+			@include span-columns(5 omega);
+		}
+		&.rowend {
+			@include span-columns(5 omega);
+		}
+	}
+
+	.google-map {
+		height: 20em;
+	}
+}
+
+@include at-breakpoint($desktop) {
+	@include with-grid-settings($desktop-columns, $column-width, $gutter-width, $grid-padding) {
+		.container,
+		.container-odd {
+			@include container;
+			@include susy-grid-background;
+		}
+	}
+
+	.top-bar .contact-info {
+		@include span-columns(6, 12);
+	}
+
+	.social-icons-div {
+		@include span-columns(6 omega, 12);
+	}
+
+	.app-features .feature,
+	.carousel .photo {
+		@include span-columns(4, 12);
+
+		&.rowend {
+			@include span-columns(4 omega, 12);
+		}
+	}
+
+	.cta-banner .cta-text {
+		@include span-columns(9, 12);
+	}
+
+	.cta-banner .cta-btn-main {
+		@include span-columns(3 omega, 12);
+	}
+
+	.site-contact .contact-form {
+		@include span-columns(7, 12);
+	}
+
+	.site-contact .contact-info {
+		@include pre(1);
+		@include span-columns(4 omega, 12);
+	}
+
+	.contact-form label {
+		@include span-columns(2, 12);
+	}
+
+	.contact-form input,
+	.contact-form textarea {
+		@include span-columns(10 omega, 12);
+	}
+
+	.menu {
+		@include span-columns(12, 12);
+
+		list-style: none; 
+		padding-left: 0;
+		margin: 0;
+		position: relative;
+	}
+
+	.menu-main .menu li {
+		border-bottom: 0;
+	}
+
+	.menu li {
+		float: left;
+		position: relative;
+	}
+
+	.menu li a {
+		display: inline-block;
+	}
+
+	.menu li ul {
+		list-style: none;
+		padding: 0;
+		position: absolute;
+		top: 100%;
+		width: 10em;
+		visibility: hidden;
+	}
+
+	.menu li ul a {
+		width: 100%;
+	}
+				
+	.menu li ul li {
+		float: none;
+	}
+			
+	.menu li:hover > ul {
+		visibility: visible;
+		margin-top: 0px;
+	}
+
+	.menu li:hover > ul ul {
+		position: absolute;
+		left: 100%;
+		top: 0;
+	}
+
+	li.last:hover > ul ul {
+			position: absolute;
+			left: -100%;
+		}
+
+	.menu li.right {
+		float: right;
+	}
+			
+	.menu li.right:hover > ul ul {
+		position: absolute;
+		left: -100%;
+	}
+
+	.menu-main {
+		background-color: #17A768;
+		position: relative;
+		z-index: 25;
+	}
+
+	.menu-main .menu li a {
+		color: #fff;
+		text-decoration: none;
+		padding: 10px 20px;
+		display: inline-block;
+		border-bottom: 0;
+	}
+
+					
+	.menu-main .menu li a:hover {
+		background-color: #148C57;
+		color: #fff;
+	}
+
+	.menu-main .menu li a.current {
+		background-color: #148C57;
+	}
+
+	.menu-main .menu li ul {
+		background-color: #17A768;
+	}
+
+	.menu-main .menu li:hover > a {
+		background-color: #148C57;
+	}
+
+	.menu-main:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	.menu-main .menu li {
+		display: block;
+	}
+
+	.menu-main .menu li.menu-mobile {
+		display: none;
+	}
+
+	.google-map {
+		height: 25em;
+	}
+
+	.site-footer .footer {
+		@include span-columns(3, 12); 
+		
+		&.rowend-tablet{
+			@include span-columns(3, 12);
+		}
+
+		&.rowend {
+			@include span-columns(3 omega, 12);
+		}
+	}
+}
