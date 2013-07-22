@@ -4,6 +4,7 @@ $('.menu .right ul').css({
 });
 
 // Slide mobile menu down 
-$('.menu-main').on('click', '.menu-mobile a', function() {
+$('.menu-main').on('click', '.menu-mobile a', function(e) {
+	e.preventDefault();
 	$('.menu li:not(:first-child)').slideToggle();
 })
